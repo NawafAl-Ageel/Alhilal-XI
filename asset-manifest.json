@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Alhilal-XI/static/css/main.e19daaf2.css",
-    "main.js": "/Alhilal-XI/static/js/main.fd4b75bc.js",
+    "main.css": "/Alhilal-XI/static/css/main.f0ca499e.css",
+    "main.js": "/Alhilal-XI/static/js/main.bba1da4d.js",
     "static/js/453.763777ca.chunk.js": "/Alhilal-XI/static/js/453.763777ca.chunk.js",
     "index.html": "/Alhilal-XI/index.html",
-    "main.e19daaf2.css.map": "/Alhilal-XI/static/css/main.e19daaf2.css.map",
-    "main.fd4b75bc.js.map": "/Alhilal-XI/static/js/main.fd4b75bc.js.map",
+    "main.f0ca499e.css.map": "/Alhilal-XI/static/css/main.f0ca499e.css.map",
+    "main.bba1da4d.js.map": "/Alhilal-XI/static/js/main.bba1da4d.js.map",
     "453.763777ca.chunk.js.map": "/Alhilal-XI/static/js/453.763777ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e19daaf2.css",
-    "static/js/main.fd4b75bc.js"
+    "static/css/main.f0ca499e.css",
+    "static/js/main.bba1da4d.js"
   ]
 }
