@@ -1,0 +1,79 @@
+.prize-tier-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.tier-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.tier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.tier-name {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.tier-levels {
+  display: grid;
+  gap: 12px;
+}
+
+.level-item {
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.level-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.level-badge {
+  background: #0066cc;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.points-required {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.rewards { display: grid; gap: 10px; }
+
+.reward {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.reward-image.small {
+  width: 36px;
+  height: 36px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  background-color: #f1f3f5;
+}
+
+.reward-text { display: flex; flex-direction: column; }
+.reward-text .reward-name { font-weight: 600; }
+.reward-text .reward-desc { font-size: 0.8rem; color: #777; }
+
+

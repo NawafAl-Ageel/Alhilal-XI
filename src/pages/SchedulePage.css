@@ -1,0 +1,276 @@
+/* Abstract Chain Inspired Schedule Page */
+.schedule-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.matches-container {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.matches-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.matches-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.matches-header p {
+  font-size: 1rem;
+  color: #666;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.match-card-abstract {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.match-card-abstract:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 102, 204, 0.3);
+}
+
+.match-card-abstract.selected {
+  border-color: #00c851;
+  background: linear-gradient(135deg, #ffffff, rgba(0, 200, 81, 0.02));
+  box-shadow: 0 8px 24px rgba(0, 200, 81, 0.15);
+}
+
+.match-date-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.date-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003366;
+  line-height: 1;
+}
+
+.date-info {
+  text-align: right;
+}
+
+.month {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.weekday {
+  font-size: 0.8rem;
+  color: #999;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.match-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.teams-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.home-team, .away-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.away-team {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.team-logo {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.team-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.vs-indicator {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #999;
+  background: #f8f9fa;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.match-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.time-venue {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+}
+
+.match-time {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.venue {
+  font-size: 0.8rem;
+  color: #666;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.competition-tag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.selected-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background: #00c851;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 200, 81, 0.3);
+}
+
+.no-matches {
+  text-align: center;
+  padding: 80px 20px;
+  color: #666;
+}
+
+.no-matches-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.no-matches h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.no-matches p {
+  font-size: 1rem;
+  color: #666;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .matches-container {
+    padding: 24px 20px;
+  }
+  
+  .matches-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .match-card-abstract {
+    padding: 20px;
+  }
+  
+  .teams-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .home-team, .away-team {
+    justify-content: center;
+  }
+  
+  .match-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .matches-container {
+    padding: 20px 16px;
+  }
+  
+  .match-card-abstract {
+    padding: 16px;
+  }
+  
+  .date-number {
+    font-size: 1.5rem;
+  }
+  
+  .team-name {
+    font-size: 0.9rem;
+  }
+}

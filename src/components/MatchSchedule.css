@@ -1,0 +1,238 @@
+.match-schedule {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow);
+  height: fit-content;
+  min-height: 600px;
+}
+
+.schedule-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.schedule-header h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.schedule-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-card {
+  background: var(--secondary-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.match-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.match-card.selected {
+  border-color: var(--success);
+  background: linear-gradient(135deg, var(--secondary-bg) 0%, rgba(0, 204, 102, 0.1) 100%);
+  box-shadow: 0 4px 20px rgba(0, 204, 102, 0.2);
+}
+
+.match-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 70px;
+}
+
+.date-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--accent-blue);
+  line-height: 1;
+}
+
+.date-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.month {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.weekday {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.match-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opponent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vs {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.team-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.match-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.time-venue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.time {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.venue {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.competition {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.match-status {
+  min-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-indicator {
+  width: 24px;
+  height: 24px;
+  background: var(--success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.no-matches {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.no-matches p {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.no-matches small {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .match-schedule {
+    padding: 16px;
+    min-height: auto;
+  }
+  
+  .schedule-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .match-card {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .date-number {
+    font-size: 1.5rem;
+  }
+  
+  .team-name {
+    font-size: 1rem;
+  }
+  
+  .match-date {
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .match-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .match-date {
+    align-self: center;
+  }
+  
+  .match-info {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .match-status {
+    align-self: center;
+  }
+}

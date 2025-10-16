@@ -1,0 +1,295 @@
+.organized-player-panel .players-grid > div[style*="pointer-events: none"] .player-card {
+  opacity: 0.9;
+  filter: grayscale(10%);
+}
+
+.organized-player-panel .players-grid .player-card.selected,
+.organized-player-panel .players-grid .player-card .status-indicators,
+.organized-player-panel .players-grid .player-card .selection-indicator {
+  display: none !important;
+}
+
+.organized-player-panel {
+  background: linear-gradient(180deg, #ffffff, #f7f9fc);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.organized-player-panel .players-section {
+  padding-top: 8px;
+}
+
+.organized-player-panel .players-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (min-width: 992px) {
+  .organized-player-panel .players-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.organized-player-panel {
+  background: var(--surface);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 24px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Squad Status */
+.squad-status {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--border-light);
+  border-radius: 12px;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.status-value {
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+/* Auto Fill Buttons */
+.auto-fill-section {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auto-fill-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--primary-blue);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auto-fill-btn.secondary {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.auto-fill-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.auto-fill-btn.secondary:hover:not(:disabled) {
+  background: var(--text-tertiary);
+  color: white;
+}
+
+.auto-fill-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  margin-bottom: 24px;
+  background: var(--border-light);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.category-tab {
+  flex: 1;
+  padding: 12px 8px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.category-tab:hover {
+  color: var(--text-primary);
+  background: rgba(0, 102, 204, 0.1);
+}
+
+.category-tab.active {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+.tab-label {
+  font-weight: 500;
+  line-height: 1;
+}
+
+.tab-count {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* Players Section */
+.players-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+/* Bench Section */
+.bench-section {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+.bench-icon {
+  font-size: 1rem;
+}
+
+.bench-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.bench-warning {
+  background: rgba(255, 136, 0, 0.1);
+  border: 1px solid rgba(255, 136, 0, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--warning);
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Player Card States */
+.player-card.on-bench {
+  opacity: 0.7;
+  border: 2px solid var(--warning);
+}
+
+.player-card.in-formation {
+  opacity: 0.5;
+  border: 2px solid var(--primary-blue);
+}
+
+.bench-player {
+  position: relative;
+}
+
+.bench-player::after {
+  content: '📍';
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--surface);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .organized-player-panel {
+    padding: 16px;
+  }
+  
+  .squad-status {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .category-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 8px;
+  }
+  
+  .bench-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-tab {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+  
+  .tab-icon {
+    font-size: 1rem;
+  }
+  
+  .auto-fill-btn {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}

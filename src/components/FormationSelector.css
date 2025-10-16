@@ -1,0 +1,103 @@
+.formation-selector-modern {
+  margin-bottom: 24px;
+}
+
+/* Remove bottom margin when inside page-actions for proper alignment */
+.page-actions .formation-selector-modern {
+  margin-bottom: 0;
+}
+
+.formation-tabs {
+  display: flex;
+  gap: 4px;
+  background: #f5f5f5;
+  padding: 4px;
+  border-radius: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.formation-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.formation-tab {
+  flex: 1;
+  min-width: 85px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Inter', sans-serif;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.formation-tab:hover {
+  background: rgba(0, 102, 204, 0.1);
+}
+
+.formation-tab.active {
+  background: var(--primary-blue);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+}
+
+.formation-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+.formation-desc {
+  font-size: 0.68rem;
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+.formation-tab.active .formation-desc {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formation-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  
+  .formation-tab {
+    min-width: 100px;
+    padding: 10px 12px;
+  }
+  
+  .formation-name {
+    font-size: 0.85rem;
+  }
+  
+  .formation-desc {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formation-tab {
+    min-width: 90px;
+    padding: 8px 10px;
+  }
+  
+  .formation-name {
+    font-size: 0.8rem;
+  }
+  
+  .formation-desc {
+    font-size: 0.65rem;
+  }
+}

@@ -1,0 +1,189 @@
+.prize-timeline-container {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+}
+
+.current-points {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.points-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0066cc;
+}
+
+.points-label {
+  font-size: 1rem;
+  color: #666;
+}
+
+.max-points {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.timeline-bar {
+  position: relative;
+  margin: 60px 0 40px 0;
+}
+
+.timeline-track {
+  height: 12px;
+  background: #f1f3f5;
+  border-radius: 6px;
+  position: relative;
+}
+
+.timeline-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #0066cc, #00a2ff);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.milestones {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 12px;
+}
+
+.milestone {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+.milestone-dot {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #e9ecef;
+  border: 4px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.milestone.completed .milestone-dot {
+  background: #0066cc;
+  border-color: #ffffff;
+}
+
+.milestone.current .milestone-dot {
+  background: #ffd700;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 6px rgba(255, 215, 0, 0.3);
+}
+
+.milestone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.milestone-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 7px
+}
+
+/* Default state - make white images darker so they're visible on gray background */
+.milestone-icon img {
+  filter: brightness(0.3);
+}
+
+/* Completed state - white image on blue background, so make it bright white */
+.milestone.completed .milestone-icon {
+  color: #ffffff;
+}
+
+.milestone.completed .milestone-icon img {
+  filter: brightness(1) contrast(1);
+}
+
+/* Current state - make image darker on gold background for better contrast */
+.milestone.current .milestone-icon img {
+  filter: brightness(0.2);
+}
+
+.milestone-info {
+  position: relative;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  min-width: 120px;
+}
+
+.milestone-points {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.milestone-rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reward-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.reward-name {
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
+
+
+@media (max-width: 768px) {
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .points-number {
+    font-size: 1.5rem;
+  }
+  
+  .milestone-info {
+    min-width: 80px;
+  }
+  
+  .reward-name {
+    max-width: 60px;
+  }
+}
+
+

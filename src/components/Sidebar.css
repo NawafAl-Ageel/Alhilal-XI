@@ -1,0 +1,506 @@
+.sidebar {
+  width: 100%;
+  height: 100vh;
+  background: transparent; /* Background now handled by container */
+  border: none; /* Border now handled by container */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Changed from fixed to relative */
+  overflow-y: auto;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+/* RTL Support with Higher Specificity */
+.sidebar.rtl {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.sidebar.rtl .nav-label,
+.sidebar.rtl .nav-description,
+.sidebar.rtl .nav-section-title,
+.sidebar.rtl .user-name,
+.sidebar.rtl .user-role,
+.sidebar.rtl .footer-text,
+.sidebar.rtl .footer-version {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+.sidebar.ltr {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.sidebar.ltr .nav-label,
+.sidebar.ltr .nav-description,
+.sidebar.ltr .nav-section-title,
+.sidebar.ltr .user-name,
+.sidebar.ltr .user-role,
+.sidebar.ltr .footer-text,
+.sidebar.ltr .footer-version {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* Remove RTL positioning - sidebar always stays left */
+
+/* Enhanced Brand Header */
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.02) 0%, rgba(255, 255, 255, 0.8) 100%);
+}
+
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Clean main brand with logos side by side */
+.main-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+/* Al-Hilal logo styling */
+.alhilal-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 102, 204, 0.1));
+}
+
+/* Text logo styling */
+.text-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Brand separator */
+.brand-separator {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 102, 204, 0.2) 50%, transparent 100%);
+  margin: 4px 0;
+}
+
+.main-brand .brand-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* Separator line */
+.brand-separator {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ddd, transparent);
+  margin: 4px 0;
+}
+
+/* Enhanced Powered by section */
+.powered-by {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #888;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.powered-by:hover {
+  opacity: 1;
+}
+
+.powered-text {
+  font-weight: 400;
+  white-space: nowrap;
+  font-size: 0.7rem;
+}
+
+.powered-by .tawuniya-logo {
+  width: 60px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Remove old styles */
+.brand-logo {
+  display: none;
+}
+
+.brand-text {
+  display: none;
+}
+
+.brand-divider {
+  display: none;
+}
+
+.brand-title {
+  display: none;
+}
+
+.brand-subtitle {
+  display: none;
+}
+
+/* Enhanced User Card */
+.user-card {
+  margin: 16px 20px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 1px solid rgba(0, 102, 204, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  box-shadow: 0 3px 12px rgba(0, 102, 204, 0.08);
+  transition: all 0.2s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.12);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex: 1;
+}
+
+/* RTL support for user info with higher specificity */
+.sidebar.rtl .user-info {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+.sidebar.ltr .user-info {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 2px 0;
+  line-height: 1.3;
+}
+
+.user-role {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+
+.user-status {
+  position: relative;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #28a745;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(40, 167, 69, 0.3);
+  transition: all 0.2s ease;
+}
+
+.status-dot.active {
+  background: #00c851;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 1px rgba(0, 200, 81, 0.3); }
+  50% { box-shadow: 0 0 0 3px rgba(0, 200, 81, 0.2); }
+  100% { box-shadow: 0 0 0 1px rgba(0, 200, 81, 0.3); }
+}
+
+/* Navigation */
+.sidebar-nav {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.nav-section {
+  margin-bottom: 32px;
+}
+
+.nav-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px 0;
+  padding: 0 8px;
+}
+
+/* RTL support for navigation section title */
+.sidebar.rtl .nav-section-title {
+  text-align: right;
+  padding: 0 8px 0 0;
+}
+
+.sidebar.ltr .nav-section-title {
+  text-align: left;
+  padding: 0 0 0 8px;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  position: relative;
+  margin-bottom: 4px;
+  font-family: inherit;
+}
+
+/* RTL support for navigation items with higher specificity */
+.sidebar.rtl .nav-item {
+  text-align: right !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  direction: rtl !important;
+}
+
+.sidebar.rtl .nav-item .nav-content {
+  order: 1 !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+.sidebar.rtl .nav-item .nav-indicator {
+  order: 2 !important;
+}
+
+.sidebar.ltr .nav-item {
+  text-align: left !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  direction: ltr !important;
+}
+
+.sidebar.ltr .nav-item .nav-content {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.nav-item:hover {
+  background: rgba(0, 102, 204, 0.08);
+  transform: translateX(2px);
+}
+
+.sidebar.rtl .nav-item:hover {
+  transform: translateX(-2px);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #0066cc, #004499);
+  color: white;
+  box-shadow: 
+    0 4px 12px rgba(0, 102, 204, 0.25),
+    0 2px 4px rgba(0, 102, 204, 0.15);
+}
+
+.nav-item.active .nav-description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover .nav-icon {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.nav-item.active .nav-icon {
+  opacity: 1;
+  filter: brightness(0) invert(1);
+}
+
+/* Trophy icon - larger size and pushed to the right */
+.nav-icon.trophy-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: -4px;
+}
+
+/* Schedule icon - smaller size */
+.nav-icon.schedule-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* RTL support for nav content with higher specificity */
+.sidebar.rtl .nav-content {
+  text-align: right !important;
+  align-items: flex-end !important;
+  direction: rtl !important;
+}
+
+.sidebar.ltr .nav-content {
+  text-align: left !important;
+  align-items: flex-start !important;
+  direction: ltr !important;
+}
+
+.nav-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.nav-description {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.nav-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav-item.active .nav-indicator {
+  opacity: 1;
+}
+
+/* Footer */
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: auto;
+}
+
+.footer-info {
+  text-align: center;
+}
+
+/* RTL support for footer with higher specificity */
+.sidebar.rtl .footer-info {
+  text-align: center !important; /* Keep footer centered in both directions */
+  direction: rtl !important;
+}
+
+.sidebar.ltr .footer-info {
+  text-align: center !important; /* Keep footer centered in both directions */
+  direction: ltr !important;
+}
+
+.footer-text {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+.footer-version {
+  font-size: 0.7rem;
+  color: #999;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.rtl {
+    transform: translateX(100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}

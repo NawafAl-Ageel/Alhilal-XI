@@ -1,24 +1,62 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
+import { LanguageProvider } from './contexts/LanguageContext';
+import LoginPage from './pages/LoginPage';
+import MainLayout from './components/MainLayout';
+import ProtectedRoute from './components/ProtectedRoute';
+import SchedulePage from './pages/SchedulePage';
+import DashboardPage from './pages/DashboardPage';
+import PlayersPage from './pages/PlayersPage';
+import AccountPage from './pages/AccountPage';
+import PrizesPage from './pages/PrizesPage';
 import './App.css';
+import SplashScreen from './components/SplashScreen';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [showSplash, setShowSplash] = useState(true);
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'schedule':
+        return <SchedulePage />;
+      case 'dashboard':
+        return <DashboardPage />;
+      case 'players':
+        return <PlayersPage />;
+      case 'prizes':
+        return <PrizesPage />;
+      case 'account':
+        return <AccountPage />;
+      default:
+        return <DashboardPage />;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LanguageProvider>
+      <AuthProvider>
+        <Router>
+          <div className="App">
+            {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
+            <Routes>
+              <Route path="/login" element={<LoginPage />} />
+              <Route 
+                path="/" 
+                element={
+                  <ProtectedRoute>
+                    <MainLayout activeTab={activeTab} onTabChange={setActiveTab}>
+                      {renderContent()}
+                    </MainLayout>
+                  </ProtectedRoute>
+                } 
+              />
+            </Routes>
+          </div>
+        </Router>
+      </AuthProvider>
+    </LanguageProvider>
   );
 }
 

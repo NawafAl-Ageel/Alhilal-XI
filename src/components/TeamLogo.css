@@ -1,0 +1,208 @@
+/* Team Logo Component Styles */
+
+.team-logo-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.team-logo-container.loading {
+  opacity: 0.8;
+}
+
+.team-logo-container.error {
+  opacity: 0.9;
+}
+
+/* Logo Image Styles */
+.team-logo-image {
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f8f9fa;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-logo-image:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Emoji/Text Fallback Styles */
+.team-logo-emoji,
+.team-logo-fallback {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-logo-emoji:hover,
+.team-logo-fallback:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-logo-fallback {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #495057;
+}
+
+/* Loading Skeleton */
+.team-logo-skeleton {
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Team Name Label */
+.team-logo-name {
+  color: #666;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+/* Size Variants */
+.team-logo-container.small .team-logo-image,
+.team-logo-container.small .team-logo-emoji,
+.team-logo-container.small .team-logo-fallback,
+.team-logo-container.small .team-logo-skeleton {
+  border-width: 1px;
+}
+
+.team-logo-container.large .team-logo-image,
+.team-logo-container.large .team-logo-emoji,
+.team-logo-container.large .team-logo-fallback,
+.team-logo-container.large .team-logo-skeleton {
+  border-width: 3px;
+}
+
+/* Match Card Integration */
+.match-card .team-logo-container {
+  flex-shrink: 0;
+}
+
+.match-card .team-logo-image,
+.match-card .team-logo-emoji,
+.match-card .team-logo-fallback {
+  box-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.12),
+    0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Tournament Logo Specific Styles */
+.tournament-logo-container .team-logo-image {
+  border-radius: 4px; /* Square corners for tournament logos */
+}
+
+.tournament-logo.tournament-logo {
+  border-radius: 4px !important;
+  object-fit: contain; /* Maintain aspect ratio for tournament logos */
+}
+
+/* High DPI / Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .team-logo-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Dark Mode Support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .team-logo-fallback {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+  }
+  
+  .team-logo-name {
+    color: #bdc3c7;
+  }
+  
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+  }
+}
+
+/* Accessibility */
+.team-logo-container:focus-within {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+/* Animation for successful load */
+.team-logo-image,
+.team-logo-emoji {
+  animation: fadeInScale 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Error state styling */
+.team-logo-container.error .team-logo-emoji,
+.team-logo-container.error .team-logo-fallback {
+  opacity: 0.8;
+  border-color: rgba(231, 76, 60, 0.3);
+}

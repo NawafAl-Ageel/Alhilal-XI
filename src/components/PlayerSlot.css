@@ -1,0 +1,118 @@
+.player-slot {
+  width: 60px;
+  height: 60px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.player-slot:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  border-style: solid;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+  transform: scale(1.1);
+  box-shadow: 
+    0 6px 20px rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.slot-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slot-icon {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  margin-bottom: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.3));
+}
+
+.slot-position {
+  font-size: 0.68rem;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 6px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.3px;
+}
+
+.slot-tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 20;
+  border: 1px solid var(--border-color);
+}
+
+.player-slot:hover .slot-tooltip {
+  opacity: 1;
+}
+
+/* Active state when being clicked */
+.player-slot:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .player-slot {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .slot-icon {
+    font-size: 1rem;
+  }
+  
+  .slot-position {
+    font-size: 0.6rem;
+  }
+  
+  .slot-tooltip {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-slot {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .slot-icon {
+    font-size: 0.9rem;
+  }
+  
+  .slot-position {
+    font-size: 0.55rem;
+  }
+}
