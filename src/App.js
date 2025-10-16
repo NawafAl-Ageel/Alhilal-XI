@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import LoginPage from './pages/LoginPage';
@@ -37,6 +37,9 @@ function App() {
   return (
     <LanguageProvider>
       <AuthProvider>
+        {(() => {
+          const Router = process.env.NODE_ENV === 'production' ? HashRouter : BrowserRouter;
+          return (
         <Router>
           <div className="App">
             {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
@@ -55,6 +58,8 @@ function App() {
             </Routes>
           </div>
         </Router>
+          );
+        })()}
       </AuthProvider>
     </LanguageProvider>
   );
