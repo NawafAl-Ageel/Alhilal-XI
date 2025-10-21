@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Alhilal-XI/static/css/main.92f838b3.css",
-    "main.js": "/Alhilal-XI/static/js/main.6b2def31.js",
-    "static/js/453.763777ca.chunk.js": "/Alhilal-XI/static/js/453.763777ca.chunk.js",
-    "index.html": "/Alhilal-XI/index.html",
-    "main.92f838b3.css.map": "/Alhilal-XI/static/css/main.92f838b3.css.map",
-    "main.6b2def31.js.map": "/Alhilal-XI/static/js/main.6b2def31.js.map",
-    "453.763777ca.chunk.js.map": "/Alhilal-XI/static/js/453.763777ca.chunk.js.map"
+    "main.css": "./static/css/main.b8989e75.css",
+    "main.js": "./static/js/main.85f20932.js",
+    "static/js/453.763777ca.chunk.js": "./static/js/453.763777ca.chunk.js",
+    "index.html": "./index.html",
+    "main.b8989e75.css.map": "./static/css/main.b8989e75.css.map",
+    "main.85f20932.js.map": "./static/js/main.85f20932.js.map",
+    "453.763777ca.chunk.js.map": "./static/js/453.763777ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92f838b3.css",
-    "static/js/main.6b2def31.js"
+    "static/css/main.b8989e75.css",
+    "static/js/main.85f20932.js"
   ]
 }
